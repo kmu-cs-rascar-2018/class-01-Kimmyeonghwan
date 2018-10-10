@@ -72,11 +72,11 @@ class Car(object):
                 distance = distance_detector.get_distance()
                 driving_controller.forward_with_speed(30)
                 if distance <= 15 and distance != -1: #No hit 20 Need Debug
-                    print("Distance is ", distance)
+                    #print("Distance is ", distance)
                     driving_controller.stop()
                     while True:
                         time.sleep(1)
-                        print("Distance is ", distance)
+                        #print("Distance is ", distance)
                         driving_controller.backward_with_speed(30)
                         time.sleep(4)
                         driving_controller.stop()
@@ -89,11 +89,11 @@ class Car(object):
                 distance = distance_detector.get_distance()
                 driving_controller.forward_with_speed(50)
                 if distance <= 20 and distance != -1: #No hit 35 Need Debug
-                    print("Distance is ", distance)
+                    #print("Distance is ", distance)
                     driving_controller.stop()
                     while True:
                         time.sleep(1)
-                        print("Distance is ", distance)
+                        #print("Distance is ", distance)
                         driving_controller.backward_with_speed(50)
                         time.sleep(4)
                         driving_controller.stop()
@@ -106,11 +106,11 @@ class Car(object):
                 distance = distance_detector.get_distance()
                 driving_controller.forward_with_speed(70)
                 if distance <= 25 and distance != -1: #No hit 40 Need Debug
-                    print("Distance is ", distance)
+                    #print("Distance is ", distance)
                     driving_controller.stop()
                     while True:
                         time.sleep(1)
-                        print("Distance is ", distance)
+                        #print("Distance is ", distance)
                         driving_controller.backward_with_speed(70)
                         time.sleep(4)
                         driving_controller.stop()
@@ -118,8 +118,8 @@ class Car(object):
                         a += 1
                         break
                     
-                elif distance == 1:
-                    driving_controller.forward_with_speed(70) #Distance -1 Debug
+                #elif distance == 1:
+                    #driving_controller.forward_with_speed(70) #Distance -1 Debug
                 else:
                     pass
                 
