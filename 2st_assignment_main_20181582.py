@@ -18,20 +18,15 @@ if __name__ == "__main__":
     Tracker = Tracking_Sensor.SEN040134_Tracking([16, 18, 22, 40, 32])
     a = [55, 60, 80, 85, 95, 100, 120, 125]
     b = [30, 40, 50] # 0 = 30, 1 = 50
+    direction_controller = front_wheels.Front_Wheels(db='config')
+    driving_controller = rear_wheels.Rear_Wheels(db='config')
+    
     try:
         while True:
             print("현재 탐지 결과입니다 : ", Tracker.read_digital())
             print("구동체가 라인을 감지한 결과는 : ", Tracker.is_in_line())
             print("라인 중앙을 감지한 결과는 : ", Tracker.is_center())
             time.sleep(1)
-            # First Ready
-            direction_controller = front_wheels.Front_Wheels(db='config')
-            direction_controller.turn_straight()
-            driving_controller = rear_wheels.Rear_Wheels(db='config')
-            #driving_controller.ready()
-            #driving_controller.forward_with_speed(50)
-
-
 
             if Tracker.is_equal_status([1,0,0,0,0]):
                 direction_controller.turn(a[0])
